@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "566798315693",
+    "firebase_url": "https://testbato.firebaseio.com",
+    "project_id": "testbato",
+    "storage_bucket": "testbato.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566798315693:android:2fa16058962d03ac3e9624",
+        "android_client_info": {
+          "package_name": "com.example.testBato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566798315693-ijg4jhl7t2s6tebq3nrae5i93cn6tp2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_UvI286swahAq-MJvRuW9C3FV4o_OqCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566798315693-ijg4jhl7t2s6tebq3nrae5i93cn6tp2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
