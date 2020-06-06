@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Test Bato',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -67,6 +68,32 @@ class _MyHomePageState extends State<MyHomePage> {
   void _changeLatLng() async {
     Position position = await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+
+    // current position latitude and longitude
+    Map<String, dynamic> pos = {
+      'latitude': position.latitude,
+      'longitude': position.longitude
+    };
+
+    print('\n\n\n');
+    print('Firestore data log..');
+
+    // Update values of latitude and longitude in firebase
+    Firestore.instance
+        .collection('locations')
+        .document('2QtEq4ewkbHVrP19rRSx')
+        .updateData(pos);
+
+    // print latitude and longitude values stored in firebase
+    Firestore.instance
+        .collection('locations')
+        .document('2QtEq4ewkbHVrP19rRSx')
+        .get()
+        .then((DocumentSnapshot ds) {
+      print(ds.data);
+    });
+
+    print('\n\n\n');
 
     mapController.animateCamera(
       CameraUpdate.newCameraPosition(
